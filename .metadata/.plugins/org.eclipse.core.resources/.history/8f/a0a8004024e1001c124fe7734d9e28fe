@@ -35,6 +35,7 @@ public class Program {
 			
 			String error = reserva.updateDates(checkIn, checkOut);
 			if (error != null) {
+				System.out.println("Reservation: " + reserva);
 				System.out.println("Error in reservation: " + error);
 			} else {
 				System.out.println("Reservation: " + reserva);
