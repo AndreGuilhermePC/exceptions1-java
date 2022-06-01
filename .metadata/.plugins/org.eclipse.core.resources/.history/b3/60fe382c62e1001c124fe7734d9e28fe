@@ -13,10 +13,7 @@ public class Reservation {
 	
 	public static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
-	public Reservation(Integer roomNumber, Date checkIn, Date checkOut){
-		if(!checkIn.after(checkOut)) {
-			throw new DomainException("Check-out date must be after check-in date");
-		}
+	public Reservation(Integer roomNumber, Date checkIn, Date checkOut) {
 		this.roomNumber = roomNumber;
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
@@ -43,7 +40,7 @@ public class Reservation {
 		return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
 	}
 	
-	public void updateDates(Date checkIn, Date checkOut) {
+	public void updateDates(Date checkIn, Date checkOut) throws DomainException {
 		Date now = new Date();
 		if(checkIn.before(now) || checkOut.before(now)) {
 			throw new DomainException("Reservation dates for update must be future dates");
