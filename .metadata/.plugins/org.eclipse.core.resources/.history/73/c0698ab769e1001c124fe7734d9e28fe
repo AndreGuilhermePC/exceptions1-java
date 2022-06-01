@@ -1,0 +1,8 @@
+package model.exceptions;
+
+public class DomainException2 extends Exception{
+	
+	public DomainException2(String msg) {
+		super(msg);
+	}
+}

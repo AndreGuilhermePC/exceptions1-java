@@ -15,15 +15,15 @@ public class Program {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
 		try {
-			System.out.print("Room number: ");
+			System.out.print("Room number1: ");
 			int roomNumber = sc.nextInt();
 			System.out.print("Check-in date (dd/MM/yyyy): ");
 			Date checkIn = sdf.parse(sc.next());
 			System.out.print("Check-out date (dd/MM/yyyy): ");
 			Date checkOut = sdf.parse(sc.next());
 			
-			Reservation reserva = new Reservation(roomNumber, checkIn, checkOut);
-			System.out.println("Reservation: " + reserva);
+			Reservation reservation = new Reservation(roomNumber, checkIn, checkOut);
+			System.out.println("Reservation: " + reservation);
 			
 			System.out.println();
 			System.out.println("Enter data to update the reservation:");
@@ -32,7 +32,8 @@ public class Program {
 			System.out.print("Check-out date (dd/MM/yyyy): ");
 			checkOut = sdf.parse(sc.next());
 			
-			reserva.updateDates(checkIn, checkOut);
+			reservation.updateDates(checkIn, checkOut);
+			System.out.println("Reservation: " + reservation);
 		}
 		catch(ParseException e) {
 			System.out.println("Invalid date format");

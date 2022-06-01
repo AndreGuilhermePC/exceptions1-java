@@ -1,0 +1,9 @@
+package model.exceptions;
+
+public class DomainException2 extends RuntimeException{
+	private static final long serialVersionUID = 1L;
+
+	public DomainException2(String msg) {
+		super(msg);
+	}
+}
